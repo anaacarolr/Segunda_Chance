@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!-- Header -->
+<div class="d-flex flex-column flex-md-row align-items-md-center justify-content-between mb-4 gap-3">
+    <div>
+        <h1 class="fs-2 mb-1">Encontre seu novo amigo</h1>
+    </div>
+</div>
+<!-- Pet Grid -->
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <!-- Card 1 -->
+    <div class="col">
+        <div class="card h-100 rounded-4 overflow-hidden border">
+            <div class="position-relative">
+                <img alt="A medium-sized golden retriever mix sitting happily in a bright, sunlit outdoor sanctuary environment."
+                     class="card-img-top w-100"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuBEJ2qgDJG9NY9ma6BI0PCJrCpKvyrTWOB2pq9p17HCYR2E55Q2h_TR26a3GgsnTp6KkDL-NIZRfGS5uJpS2V4pMAtpb6HDqQe5jHm2sMkYnurwpqRaaW8t0ASLUw9LisdvwapcgCMwkvdgss0nXKY2ppGC5VqIBsBERewg5tGjESyiLhhEgcA8HrXAZjQeCX-5nUa28VYYx2VXhWgKX6sibZSI1tR_dgLVvWx74eFQph-5OvYURV-2"/>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="card-title fs-4 mb-0">Barnaby</h3>
+                    <span class="badge badge-dog rounded-pill px-3 py-2 fw-medium">Cão</span>
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-3 text-secondary fs-6">
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">calendar_month</span> 2 Anos</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">pets</span> SRD (Mistura)</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">straighten</span> Médio</span>
+                </div>
+                <div class="mt-auto pt-3 border-top d-flex flex-column gap-3">
+                    <div class="d-flex gap-2">
+                        <span class="badge badge-feature fw-medium px-2 py-1">Vacinado</span>
+                        <span class="badge badge-feature fw-medium px-2 py-1">Bom com Crianças</span>
+                    </div>
+                    <button class="btn btn-primary w-100 fw-semibold py-2">Adotar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card 2 -->
+    <div class="col">
+        <div class="card h-100 rounded-4 overflow-hidden border">
+            <div class="position-relative">
+                <img alt="A sweet, slender greyhound mix standing attentively in a pristine, modern adoption facility hallway."
+                     class="card-img-top w-100"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9GBU3nkQKpe0_jsZFWjHQCNUlmHQwGnyMn_uUKf8Mc4StBnykVEb3R0_zb7CctfcmU2C8Z-k-L2nHcIJfWffy_sLFpfOJqpzdb8e8bxKDgxs8Za1Xrfg1NtqDBv1nUmv5mOya9Sg4GGnlKy8kX8H0yqHCNMbf871mitEx2RS2W-STdvimmIPQBwk9YsChSUzH3LLZ1KwU2QPrjoRCiml_xoMvY2POVAH_iNLljor_Kx-7Ymv02jzi"/>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="card-title fs-4 mb-0">Luna</h3>
+                    <span class="badge badge-dog rounded-pill px-3 py-2 fw-medium">Cão</span>
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-3 text-secondary fs-6">
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">calendar_month</span> 4 Anos</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">pets</span> Galgo</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">straighten</span> Grande</span>
+                </div>
+                <div class="mt-auto pt-3 border-top d-flex flex-column gap-3">
+                    <div class="d-flex gap-2">
+                        <span class="badge badge-feature fw-medium px-2 py-1">Calmo</span>
+                        <span class="badge badge-feature fw-medium px-2 py-1">Treinado</span>
+                    </div>
+                    <button class="btn btn-primary w-100 fw-semibold py-2">Adotar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Card 3 -->
+    <div class="col">
+        <div class="card h-100 rounded-4 overflow-hidden border">
+            <div class="position-relative">
+                <img alt="A small, fluffy white and orange tabby kitten sitting on a soft, light grey blanket in a sun-drenched room."
+                     class="card-img-top w-100"
+                     src="https://lh3.googleusercontent.com/aida-public/AB6AXuDP4GmN-VNTldMuzRZVzRHQZedrvIKtos1o0bcyyl94-GLyaIUvAG7bw0VbbLer7hTtpH5xBgC6VQxEPy2D_b8SRt3x66k1XT6fVVr5moQKHdNL2_K_6pzmyVNv35TXzReIvFPQIz-CiSS5MLVXYfwBMEciHnfE14Z9YEGYDBuZr92XM3nUDNT5-r_bzKAcPtS2GAK9BRFmpSVtjljZ81N4g0iCPPIM20SaTdtZpkdIDT3Wk1iL7Hhh"/>
+            </div>
+            <div class="card-body d-flex flex-column p-4">
+                <div class="d-flex justify-content-between align-items-start mb-2">
+                    <h3 class="card-title fs-4 mb-0">Milo</h3>
+                    <span class="badge badge-cat rounded-pill px-3 py-2 fw-medium">Gato</span>
+                </div>
+                <div class="d-flex flex-wrap gap-3 mb-3 text-secondary fs-6">
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">calendar_month</span> 3 Meses</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">pets</span> Pelo Curto</span>
+                    <span class="d-flex align-items-center gap-1"><span
+                            class="material-symbols-outlined fs-6 opacity-75">straighten</span> Pequeno</span>
+                </div>
+                <div class="mt-auto pt-3 border-top d-flex flex-column gap-3">
+                    <div class="d-flex gap-2">
+                        <span class="badge badge-feature fw-medium px-2 py-1">Brincalhão</span>
+                    </div>
+                    <button class="btn btn-primary w-100 fw-semibold py-2">Adotar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock conteudo %}
