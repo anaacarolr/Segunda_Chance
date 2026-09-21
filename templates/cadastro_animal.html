@@ -1,0 +1,244 @@
+{% extends 'base3.html' %}
+
+{% block conteudo %}
+
+<!-- Conteúdo Principal -->
+<main class="flex-grow-1 py-5">
+    <div class="container-xl">
+        <div class="row justify-content-center">
+            <div class="col-lg-10 col-xl-9">
+
+                <!-- Header da Página -->
+                <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-4">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-box">
+                            <span class="material-symbols-outlined fs-3">sound_detection_dog_barking</span>
+                        </div>
+                        <div>
+                            <h1 class="h3 fw-bold mb-1" style="color: #1a3a2a;">Cadastro de Animal</h1>
+                            <p class="text-muted mb-0">Insira os dados do animal para disponibilizá-lo para adoção ou
+                                controle interno.</p>
+                        </div>
+                    </div>
+                    <div>
+                            <span class="badge rounded-pill text-success bg-success-subtle border border-success-subtle px-3 py-2 fw-semibold d-inline-flex align-items-center gap-1">
+                                <span class="material-symbols-outlined fs-6">verified</span> Formulário Oficial
+                            </span>
+                    </div>
+                </div>
+
+                <!-- Card do Formulário -->
+                <div class="card card-custom p-4 p-md-5">
+                    <form action="#" method="POST" enctype="multipart/form-data">
+
+                        <!-- Bloco 1: Identificação Básica -->
+                        <h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
+                            <span class="material-symbols-outlined fs-5">badge</span> Dados Básicos
+                        </h5>
+
+                        <div class="row g-3 mb-4">
+                            <!-- Nome do Animal -->
+                            <div class="col-md-6">
+                                <label for="nomeAnimal" class="form-label">Nome do Animal <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group">
+                                        <span class="input-group-text bg-light text-muted border-end-0"
+                                              style="border-radius: 12px 0 0 12px;">
+                                            <span class="material-symbols-outlined fs-5">edit</span>
+                                        </span>
+                                    <input type="text" class="form-control border-start-0" id="nomeAnimal" name="nome"
+                                           placeholder="Ex: Rex, Mel, Thor..." required
+                                           style="border-radius: 0 12px 12px 0;">
+                                </div>
+                            </div>
+
+                            <!-- Tipo / Espécie -->
+                            <div class="col-md-6">
+                                <label for="tipoAnimal" class="form-label">Tipo de Animal <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control border-start-0" id="tipoAnimal" name="tipo"
+                                           placeholder="Ex: Gato, Cachorro, Coelho..." required
+                                           style="border-radius: 0 12px 12px 0;">
+                            </div>
+
+                            <!-- Raça -->
+                            <div class="col-md-6">
+                                <label for="racaAnimal" class="form-label">Raça <span
+                                        class="text-danger">*</span></label>
+                                <input type="text" class="form-control" id="racaAnimal" name="raca"
+                                       placeholder="Ex: Vira-lata (SRD), Labrador, Siamês..." required>
+                            </div>
+
+                            <!-- Idade -->
+                            <div class="col-md-6">
+                                <label for="idadeAnimal" class="form-label">Idade <span
+                                        class="text-danger">*</span></label>
+                                <div class="row g-2">
+                                    <div class="col-7">
+                                        <input type="number" min="0" max="30" class="form-control" id="idadeAnimal"
+                                               name="idade_numero" placeholder="Ex: 2" required>
+                                    </div>
+                                    <div class="col-5">
+                                        <select class="form-select" name="idade_unidade">
+                                            <option value="anos" selected>Ano(s)</option>
+                                            <option value="meses">Mês(es)</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4 text-muted opacity-25">
+
+                        <!-- Bloco 2: Características Físicas e Status -->
+                        <h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
+                            <span class="material-symbols-outlined fs-5">straighten</span> Características e Status
+                        </h5>
+
+                        <div class="row g-3 mb-4">
+                            <!-- Porte -->
+                            <div class="col-md-6">
+                                <label for="porteAnimal" class="form-label">Porte <span
+                                        class="text-danger">*</span></label>
+                                <select class="form-select" id="porteAnimal" name="porte" required>
+                                    <option value="" selected disabled>Selecione o porte...</option>
+                                    <option value="pequeno">Pequeno (até 10 kg)</option>
+                                    <option value="medio">Médio (11 a 25 kg)</option>
+                                    <option value="grande">Grande (26 a 45 kg)</option>
+                                    <option value="gigante">Gigante (acima de 45 kg)</option>
+                                </select>
+                            </div>
+
+                            <!-- Sexo -->
+                            <div class="col-md-6">
+                                <label class="form-label d-block">Sexo <span class="text-danger">*</span></label>
+                                <div class="d-flex gap-4 pt-1">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sexo" id="sexoMacho"
+                                               value="Macho" required>
+                                        <label class="form-check-label fw-semibold" for="sexoMacho">
+                                            <span class="material-symbols-outlined align-middle fs-6 text-primary">male</span>
+                                            Macho
+                                        </label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="radio" name="sexo" id="sexoFemea"
+                                               value="Fêmea" required>
+                                        <label class="form-check-label fw-semibold" for="sexoFemea">
+                                            <span class="material-symbols-outlined align-middle fs-6"
+                                                  style="color: #d63384;">female</span> Fêmea
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Adotado ou Não -->
+                            <div class="col-12 mt-3">
+                                <label class="form-label d-block">Situação / Status de Adoção <span class="text-danger">*</span></label>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <div class="status-toggle-card h-100">
+                                            <div class="form-check d-flex align-items-center gap-2">
+                                                <input class="form-check-input mt-0" type="radio" name="status_adocao"
+                                                       id="statusDisponivel" value="disponivel" checked>
+                                                <label class="form-check-label w-100 cursor-pointer"
+                                                       for="statusDisponivel">
+                                                    <div class="d-flex align-items-center justify-content-between">
+                                                        <span class="fw-bold text-success">Não Adotado (Disponível)</span>
+                                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Para Adoção</span>
+                                                    </div>
+                                                    <small class="text-muted d-block mt-1">O animal aparecerá listado
+                                                        publicamente para novos tutores.</small>
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="status-toggle-card h-100">
+                                            <div class="form-check d-flex align-items-center gap-2">
+
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="my-4 text-muted opacity-25">
+
+                        <!-- Bloco 3: Fotos e Descrição Adicional -->
+                        <h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
+                            <span class="material-symbols-outlined fs-5">photo_camera</span> Foto e Observações
+                        </h5>
+
+                        <div class="row g-3 mb-4">
+                            <div class="col-12">
+                                <div class="upload-area">
+                                    <span class="material-symbols-outlined display-5 mb-2"
+                                          style="color: var(#2d6a4f);">add_photo_alternate</span>
+                                    <h6 class="fw-bold mb-1">Arraste e solte uma foto ou clique para buscar</h6>
+                                    <p class="text-muted small mb-3">Formatos aceitos: JPG, PNG ou WEBP (Máx. 5MB)</p>
+                                    <input type="file" class="d-none" id="fotoAnimal" name="foto" accept="image/*">
+                                    <button type="button" class="btn btn-outline-success btn-sm rounded-pill px-3"
+                                            onclick="document.getElementById('fotoAnimal').click();"
+                                            style="color: var(#2d6a4f); border-color: var(#2d6a4f);">
+                                        Escolher Foto
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-3">
+                                <label for="descricaoAnimal" class="form-label">História e Temperamento
+                                    (Opcional)</label>
+                                <textarea class="form-control" id="descricaoAnimal" name="descricao" rows="3"
+                                          placeholder="Conte sobre a personalidade (dócil, brincalhão, calmo), castração, vacinas tomadas ou necessidades especiais..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Botões de Ação -->
+                        <div class="d-flex align-items-center justify-content-end gap-3 pt-3 border-top">
+                            <button type="reset"
+                                    class="btn btn-light px-4 py-2 fw-semibold text-secondary rounded-pill border">
+                                Limpar
+                            </button>
+                            <button type="submit"
+                                    class="btn btn-brand-light d-inline-flex align-items-center gap-2 shadow-sm">
+                                <span class="material-symbols-outlined fs-5">check_circle</span>
+                                Cadastrar Animal
+                            </button>
+                            <a class="btn btn-success" type="button" href="{{ url_for('ongs') }}">
+                                <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+                                Voltar ao Painel
+                            </a>
+
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- Card Auxiliar de Dicas -->
+                <div class="mt-4 p-3 bg-white rounded-4 border d-flex align-items-center gap-3">
+                    <div class="icon-box bg-warning-subtle text-warning-emphasis" style="width: 38px; height: 38px;">
+                        <span class="material-symbols-outlined fs-5">tips_and_updates</span>
+                    </div>
+                    <p class="mb-0 small text-muted">
+                        <strong class="text-dark">Dica de Adoção:</strong> Animais com fotos nítidas e detalhes sobre
+                        temperamento têm <strong>3x mais chances</strong> de encontrar um lar amoroso rapidamente.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Rodapé Minimalista -->
+<footer class="py-3 text-center text-secondary small bg-white border-top mt-auto">
+    <div class="container-xl">
+        Projeto Segunda Chance &copy; 2026. Todos os direitos reservados.
+    </div>
+</footer>
+
+
+{% endblock conteudo %}

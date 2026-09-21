@@ -1,0 +1,101 @@
+{% extends 'base.html' %}
+
+{% block conteudo %}
+
+<!-- Conteúdo Principal / Formulário de Login -->
+<main class="flex-grow-1 d-flex align-items-center py-5">
+    <div class="container-xl">
+        <div class="row justify-content-center">
+            <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
+
+                <div class="login-card p-4 p-sm-5">
+
+                    <!-- Cabeçalho do Card -->
+                    <div class="text-center mb-4">
+                            <span class="badge-welcome mb-3">
+                                <span class="material-symbols-outlined fs-6">lock</span> Acesso Seguro
+                            </span>
+                        <h2 class="fw-bold mb-2" style="color: #1a3a2a;">Bem-vindo de volta</h2>
+                        <p class="text-muted small mb-0">Insira seus dados para acessar sua conta na plataforma Segunda
+                            Chance.</p>
+                    </div>
+
+                    <!-- Formulário -->
+
+                    <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border" id="loginTabs" role="tablist" style="background-color: rgb(241, 245, 249) !important;">
+                        <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
+                                id="tab-pf" type="button" onclick="switchLoginMode('pf')" style="transition: all 0.2s;" href="{{ url_for('login') }}">
+                            <span class="material-symbols-outlined fs-6">person</span>
+                            <span class="">Usuário</span>
+                        </a>
+                    </div>
+                    <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border" id="loginTabs2" role="tablist" style="background-color: rgb(241, 245, 249) !important;">
+                        <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
+                                id="tab-ong" type="button" onclick="switchLoginMode('ong')"
+                                style="transition: all 0.2s;" href="{{ url_for('login_ong') }}">
+                            <span class="material-symbols-outlined fs-6">corporate_fare</span>
+                            <span class="">Organização / ONG</span>
+                        </a>
+                    </div>
+
+                    <form onsubmit="event.preventDefault();">
+                        <!-- Campo Identificador (E-mail ou CNPJ) -->
+                        <div id="field-ong" class="mb-3 position-relative d-none">
+                            <span class="material-symbols-outlined input-icon fs-5">domain</span>
+                            <div class="form-floating">
+                                <input type="text" class="form-control" id="cnpj" placeholder="00.000.000/0001-00">
+                                <label for="cnpj" class="">CNPJ da ONG</label>
+                            </div>
+                        </div>
+
+                        <div id="field-pf" class="mb-3 position-relative">
+                            <span class="material-symbols-outlined input-icon fs-5">mail</span>
+                            <div class="form-floating">
+                                <input type="number" class="form-control" id="number" placeholder="00.000.000/0000-00"
+                                       required="">
+                                <label for="number" class="">CNPJ</label>
+                            </div>
+                        </div>
+
+                        <!-- Campo Senha -->
+                        <div class="mb-3 position-relative">
+                            <span class="material-symbols-outlined input-icon fs-5">key</span>
+                            <div class="form-floating">
+                                <input type="password" class="form-control" id="senha" placeholder="Sua senha"
+                                       required="">
+                                <label for="senha" class="">Senha</label>
+                            </div>
+                        </div>
+
+                        <!-- Botão de Acesso Principal -->
+                        <a type="submit"
+                                class="btn btn-primary w-100 py-3 shadow-sm d-flex align-items-center justify-content-center gap-2 mb-3" href="{{ url_for('ongs') }}">
+                            <span class="material-symbols-outlined fs-5">login</span>
+                            <span class="">Entrar na Conta</span>
+                        </a>
+
+                    </form>
+
+                </div>
+
+                <!-- Rodapé sutil de ajuda -->
+                <div class="text-center mt-4">
+                    <p class="text-muted small mb-0">
+                        <span class="material-symbols-outlined fs-6 align-middle me-1 text-success">verified_user</span>
+                        Ambiente protegido e com dados criptografados.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</main>
+
+<!-- Rodapé Minimalista -->
+<footer class="py-3 text-center text-muted small bg-white border-top">
+    <div class="container-xl">
+        Projeto Segunda Chance © 2026. Todos os direitos reservados.
+    </div>
+</footer>
+
+{% endblock conteudo %}
