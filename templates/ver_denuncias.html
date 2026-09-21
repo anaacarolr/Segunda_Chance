@@ -1,0 +1,180 @@
+{% extends 'base3.html' %}
+
+{% block conteudo %}
+
+<!-- BEGIN: MainContent -->
+<main class="py-5" data-purpose="main-denuncias-container">
+    <div class="container-xl">
+        <!-- BEGIN: PageHeaderSection -->
+        <section class="mb-4" data-purpose="page-heading">
+            <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+                <div>
+                    <!-- Breadcrumb / Section indicator -->
+                    <div class="d-flex align-items-center gap-2 mb-2">
+<span class="badge-section-header">
+<span class="material-symbols-outlined" style="font-size: 14px;">shield</span>
+                Painel de Proteção e Resgate
+              </span>
+                        <span class="text-muted" style="font-size: 0.85rem;">• Gestão de Denúncias</span>
+                    </div>
+                    <!-- Title and Subtitle -->
+                    <h1 class="font-brand-title fw-bold fs-2 text-emerald-950 mb-1">Denúncias Recebidas</h1>
+                    <p class="text-secondary mb-0" style="font-size: 0.95rem;">
+                        Monitore, filtre e responda aos relatos anônimos de maus-tratos enviados pela comunidade.
+                    </p>
+                </div>
+                <!-- Action Buttons -->
+                <div class="d-flex align-items-center gap-2 mt-2 mt-lg-0 flex-wrap" data-purpose="header-buttons">
+                    <a class="btn btn-success" type="button" href="{{ url_for('ongs') }}">
+                        <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
+                        Voltar ao Painel
+                    </a>
+                </div>
+            </div>
+        </section>
+        <!-- END: PageHeaderSection -->
+        <!-- BEGIN: ReportsList -->
+        <section class="d-flex flex-column gap-3 mt-4" data-purpose="denuncias-list">
+            <!-- Card 1: Caso Urgente (Cão amarrado) -->
+            <article class="report-card card-urgent-highlight p-4 shadow-sm" data-purpose="report-card-urgent-1">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-urgent">
+<span class="material-symbols-outlined" style="font-size: 15px;">priority_high</span>
+                CASO URGENTE
+              </span>
+                        <span class="badge-waiting">Aguardando Ação</span>
+                        <span class="text-secondary text-sm fw-medium ms-1" style="font-size: 0.85rem;">Protocolo: #DEN-2025-0842</span>
+                    </div>
+                    <div class="d-flex align-items-center text-secondary gap-1" style="font-size: 0.85rem;">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">schedule</span>
+                        <span>Recebido há 45 minutos (Hoje, 14:20)</span>
+                    </div>
+                </div>
+                <h2 class="fs-5 fw-bold text-dark mb-2">
+                    Cão amarrado em corrente curta sem água nem cobertura sob sol extremo
+                </h2>
+                <p class="text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                    "Vizinho mantém um cão de médio porte amarrado em espaço minúsculo nos fundos da casa há mais de 4
+                    dias seguidos sem água fresca nem abrigo da chuva e calor. O animal chora constantemente e aparenta
+                    sinais graves de fraqueza e desidratação. Situação crítica requer resgate rápido."
+                </p>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">location_on</span>
+<span><strong>Estado:</strong> São Paulo (SP)</span>
+</span>
+                    <span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">lock</span>
+<span>Relato Anônimo Protegido</span>
+</span>
+                </div>
+            </article>
+            <!-- Card 2: Caso Urgente (Ninhada filhotes) -->
+            <article class="report-card card-urgent-highlight p-4 shadow-sm" data-purpose="report-card-urgent-2">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-urgent">
+<span class="material-symbols-outlined" style="font-size: 15px;">priority_high</span>
+                CASO URGENTE
+              </span>
+                        <span class="badge-investigating">Em Verificação</span>
+                        <span class="text-secondary text-sm fw-medium ms-1" style="font-size: 0.85rem;">Protocolo: #DEN-2025-0839</span>
+                    </div>
+                    <div class="d-flex align-items-center text-secondary gap-1" style="font-size: 0.85rem;">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">schedule</span>
+                        <span>Recebido há 3 horas (Hoje, 11:45)</span>
+                    </div>
+                </div>
+                <h2 class="fs-5 fw-bold text-dark mb-2">
+                    Ninhada de 5 filhotes recém-nascidos abandonados em terreno baldio
+                </h2>
+                <p class="text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                    "Encontrei uma caixa de papelão com 5 filhotinhos de gato ainda com olhos fechados abandonados na
+                    beira da cerca de um terreno baldio na rua de trás. Choveu durante a madrugada e eles estão muito
+                    molhados e gelados, precisando de aquecimento e leite especial urgente."
+                </p>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">location_on</span>
+<span><strong>Estado:</strong> Rio de Janeiro (RJ)</span>
+</span>
+                    <span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">lock</span>
+<span>Relato Anônimo Protegido</span>
+</span>
+                </div>
+            </article>
+            <!-- Card 3: Caso Regular (Animal idoso) -->
+            <article class="report-card p-4 shadow-sm" data-purpose="report-card-regular-1">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="badge-regular">Caso Regular</span>
+                        <span class="badge-waiting">Aguardando Ação</span>
+                        <span class="text-secondary text-sm fw-medium ms-1" style="font-size: 0.85rem;">Protocolo: #DEN-2025-0831</span>
+                    </div>
+                    <div class="d-flex align-items-center text-secondary gap-1" style="font-size: 0.85rem;">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">schedule</span>
+                        <span>Recebido Ontem, às 17:10</span>
+                    </div>
+                </div>
+                <h2 class="fs-5 fw-bold text-dark mb-2">
+                    Animal idoso mantido em sacada sem passeio nem cuidados veterinários
+                </h2>
+                <p class="text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                    "Um cão labrador de porte grande idoso fica o dia inteiro confinado em uma sacada estreita sem
+                    descer para caminhar, apresentando feridas nas articulações traseiras devido à falta de
+                    acolchoamento e negligência no acompanhamento de saúde."
+                </p>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">location_on</span>
+<span><strong>Estado:</strong> Minas Gerais (MG)</span>
+</span>
+                    <span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">lock</span>
+<span>Relato Anônimo Protegido</span>
+</span>
+                </div>
+            </article>
+            <!-- Card 4: Concluído (Cavalo resgatado) -->
+            <article class="report-card p-4 shadow-sm" data-purpose="report-card-success-1">
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mb-3">
+                    <div class="d-flex align-items-center gap-2 flex-wrap">
+                        <span class="badge-regular">Caso Regular</span>
+                        <span class="badge-success">
+<span class="material-symbols-outlined" style="font-size: 14px;">check</span>
+                Resgatado com Sucesso
+              </span>
+                        <span class="text-secondary text-sm fw-medium ms-1" style="font-size: 0.85rem;">Protocolo: #DEN-2025-0810</span>
+                    </div>
+                    <div class="d-flex align-items-center text-secondary gap-1" style="font-size: 0.85rem;">
+                        <span class="material-symbols-outlined" style="font-size: 16px;">schedule</span>
+                        <span>Finalizado há 2 dias</span>
+                    </div>
+                </div>
+                <h2 class="fs-5 fw-bold text-dark mb-2">
+                    Cavalo abandonado em rodovia marginal sem alimentação
+                </h2>
+                <p class="text-secondary mb-4" style="font-size: 0.95rem; line-height: 1.6;">
+                    "Cavalo magro pastando em capim seco com risco de atropelamento. A equipe de voluntários da ONG
+                    realizou a contenção e o animal já se encontra em quarentena recebendo tratamento veterinário e
+                    alimentação balanceada."
+                </p>
+                <div class="d-flex align-items-center gap-2 flex-wrap">
+<span class="badge-meta">
+<span class="material-symbols-outlined text-emerald-700" style="font-size: 16px;">location_on</span>
+<span><strong>Estado:</strong> Paraná (PR)</span>
+</span>
+                    <span class="badge-meta text-emerald-800" style="background-color: #ecfdf5; border-color: #a7f3d0;">
+<span>Atendido por: Instituto Segunda Chance</span>
+</span>
+                </div>
+            </article>
+        </section>
+        <!-- END: ReportsList -->
+    </div>
+</main>
+<!-- END: MainContent -->
+
+{% endblock conteudo %}

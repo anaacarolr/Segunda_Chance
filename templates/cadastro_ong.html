@@ -2,94 +2,91 @@
 
 {% block conteudo %}
 
-<div class="col-lg-6 d-none d-lg-flex flex-column justify-content-end p-5 position-relative overflow-hidden image-container">
-    <div class="position-absolute top-0 start-0 w-100 h-100 bg-image-panel" style="z-index: 0;"></div>
-    <div class="position-absolute top-0 start-0 w-100 h-100 gradient-overlay" style="z-index: 10;"></div>
-    <div class="position-relative text-white mt-auto" style="z-index: 20; max-width: 450px;">
-        <h2 class="display-5 fw-bold mb-3 text-white">Junte-se à Jornada.</h2>
-        <p class="fs-5 opacity-75" style="color: #b1f0ce;">Se você deseja trazer um novo amigo para casa ou é uma
-            organização dedicada ao cuidado deles, seu caminho começa aqui.</p>
-    </div>
-</div>
+<div class="container bg-white p-0 overflow-hidden custom-container border position-relative">
+    <div class="row g-0 h-100" style="min-height: 85vh;">
 
-<!-- Right Side: Registration Form -->
-<div class="col-lg-6 d-flex flex-column p-4 p-md-5 custom-scrollbar overflow-auto" style="max-height: 85vh;">
-    <!-- Mobile Header Logo -->
-    <div class="d-lg-none d-flex justify-content-center mb-4">
-        <img alt="Segunda Chance Logo"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLvuGegKSrDxkXbcBPrGZGRagE7c-PwbR_9IegpUnbJyjE_nwfW4TebWrXG5D4jSyD8cAeOQjquOhwfC2vKjbLrhfjiVx-iR9Uy0Zx7HsTm3_1yzIq5eZF4cJ181DzPDDXIzEaFL6yIhN56BmOuoygK_uw8HlYpvZrMb0bbdB3zoAvzdhCXXqeCNldyiot_f-vYXPuONdmjAqJUgS9a8LUIQA9JoyMd58fNXFuCKnNNLwW4dBACNyG_pYA"
-             style="height: 48px;"/>
-    </div>
-    <div class="mb-4">
-        <h1 class="h2 fw-bold text-dark mb-2">Criar uma Conta</h1>
-        <p class="text-secondary">Selecione o tipo de conta para começar com a Segunda Chance.</p>
-    </div>
-    <!-- Custom Tabs -->
-    <ul class="nav nav-pills nav-fill nav-pills-custom p-1 bg-light rounded-3 mb-4" id="pills-tab" role="tablist">
-        <li class="nav-item" role="presentation">
-            <a aria-controls="pills-user" aria-selected="true"
-               class="nav-link active py-3 d-flex align-items-center justify-content-center gap-2"
-               data-bs-target="#pills-user" data-bs-toggle="pill" id="pills-user-tab" role="tab" type="button" href="{{ url_for('cadastro') }}">
-                <span class="material-symbols-outlined">person</span>
-                Quero Adotar/Ser Voluntário
-            </a>
-        </li>
-        <li class="nav-item" role="presentation">
-            <a aria-controls="pills-ong" aria-selected="false"
-               class="nav-link py-3 d-flex align-items-center justify-content-center gap-2"
-               data-bs-target="#pills-ong" data-bs-toggle="pill" id="pills-ong-tab" role="tab" type="button">
-                <span class="material-symbols-outlined">domain</span>
-                Somos uma ONG
-            </a>
-        </li>
-    </ul>
-    <!-- ONG Registration Form -->
-    <div aria-labelledby="pills-ong-tab" class="tab-pane fade flex-grow-1" id="pills-ong" role="tabpanel" tabindex="0">
-        <form class="d-flex flex-column h-100" onsubmit="event.preventDefault();">
-            <div class="mb-3">
-                <label class="form-label fw-semibold" for="ong-name">Nome da Organização</label>
-                <input class="form-control py-2 px-3" id="ong-name" placeholder="Happy Paws Rescue" type="text"/>
+        <div class="col-lg-6 d-none d-lg-flex flex-column justify-content-end p-5 position-relative overflow-hidden image-container">
+            <div class="position-absolute top-0 start-0 w-100 h-100 bg-image-panel" style="z-index: 0;">
+                <img src="../static/img/baixados.jpg" height="1000" width="700"></div>
+            <div class="position-absolute top-0 start-0 w-100 h-100 gradient-overlay" style="z-index: 10;"></div>
+            <div class="position-relative text-white mt-auto" style="z-index: 20; max-width: 450px;">
+                <h2 class="display-5 fw-bold mb-3 text-white">Junte-se à Jornada.</h2>
+                <p class="fs-5 opacity-75" style="color: #b1f0ce;">Se você deseja trazer um novo amigo para casa ou é
+                    uma
+                    organização dedicada ao cuidado deles, seu caminho começa aqui.</p>
             </div>
-            <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                    <label class="form-label fw-semibold" for="ong-email">E-mail Oficial</label>
-                    <input class="form-control py-2 px-3" id="ong-email" placeholder="contact@happypaws.org"
-                           type="email"/>
+        </div>
+        <!-- Right Side: Registration Form -->
+        <div class="col-lg-6 d-flex flex-column p-4 p-md-5 m-25 custom-scrollbar overflow-auto"
+             style="max-height: 85vh;">
+            <!-- Mobile Header Logo -->
+
+
+            <div class="mb-4">
+                <h1 class="h2 fw-bold text-dark mb-2">Criar uma Conta</h1>
+                <p class="text-secondary">Selecione o tipo de conta para começar com a Segunda Chance.</p>
+            </div>
+            <!-- Custom Tabs -->
+            <ul class="nav nav-pills nav-fill nav-pills-custom p-1 bg-light mb-2 gap-3" id="pills-tab"
+                role="tablist">
+                <li class="nav-item" role="presentation">
+                    <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
+                       href="{{ url_for('cadastro') }}">
+                        <span class="material-symbols-outlined">person</span>
+                        Quero Adotar
+                    </a>
+                </li>
+                <li class="nav-item" role="presentation">
+                    <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
+                       href="{{ url_for('cadastro_ong') }}">
+                        <span class="material-symbols-outlined">domain</span>
+                        Somos uma ONG
+                    </a>
+                </li>
+            </ul>
+
+            <div class="tab-content flex-grow-1 d-flex flex-column" id="pills-tabContent">
+                <!-- User Registration Form -->
+                <div aria-labelledby="pills-ong-tab" class="tab-pane fade show active flex-grow-1" id="pills-ong"
+                     role="tabpanel" tabindex="0">
+                    <form class="d-flex flex-column h-100" onsubmit="event.preventDefault();">
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="ong-firstname">Nome da Organização </label>
+                            <input class="form-control py-2 px-3" id="ong-firstname" placeholder="EX: Instituto Cão Feliz" type="text"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="ong-cnpj">CNPJ</label>
+                            <input class="form-control py-2 px-3" id="ong-cnpj" placeholder="00.000.000/0000-00"
+                                   type="email"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="ong-estado">estado</label>
+                            <input class="form-control py-2 px-3" id="ong-estado" placeholder="São Paulo"
+                                   type="text"/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="user-password">Senha</label>
+                            <div class="position-relative">
+                                <input class="form-control py-2 px-3 pe-5" id="user-password" placeholder="********"
+                                       type="password"/>
+                                <button class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-secondary text-decoration-none"
+                                        type="button">
+                                    <span class="material-symbols-outlined">visibility_off</span>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="mt-auto pt-4">
+                            <a class="btn btn-success w-100 py-3 fw-semibold rounded-3 shadow-sm"
+                                    type="submit" href="{{ url_for('ongs') }}">
+                                Criar Conta de ONG
+                            </a>
+                        </div>
+                    </form>
                 </div>
-                <div class="col-md-6">
-                    <label class="form-label fw-semibold" for="ong-tax">CNPJ / Número de Registro</label>
-                    <input class="form-control py-2 px-3" id="ong-tax" placeholder="XX-XXXXXXX" type="text"/>
-                </div>
             </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold" for="ong-password">Senha</label>
-                <input class="form-control py-2 px-3" id="ong-password" placeholder="********" type="password"/>
-            </div>
-            <div class="mb-3">
-                <label class="form-label fw-semibold" for="ong-mission">Declaração de Missão (Breve)</label>
-                <textarea class="form-control py-2 px-3" id="ong-mission"
-                          placeholder="Descreva os principais objetivos e operações da sua organização..." rows="3"
-                          style="resize: none;"></textarea>
-            </div>
-            <div class="p-3 bg-light rounded-3 border d-flex gap-3 align-items-start mb-4">
-                <span class="material-symbols-outlined mt-1" style="color: var(#0f5238);">verified_user</span>
-                <div>
-                    <h6 class="fw-bold mb-1">Processo de Verificação</h6>
-                    <p class="mb-0 text-secondary small">Contas de ONG requerem verificação manual pela nossa equipe
-                        antes que você possa listar pets. Isso garante a segurança da plataforma.</p>
-                </div>
-            </div>
-            <div class="mt-auto">
-                <button class="btn btn-secondary-custom w-100 py-3 fw-semibold rounded-3 shadow-sm" type="submit">
-                    Solicitar Conta de ONG
-                </button>
-                <p class="text-center mt-3 text-secondary small">
-                    Já está registrado? <a class="text-decoration-none fw-bold" href="#"
-                                           style="color: var(#0f5238);">Entrar</a>
-                </p>
-            </div>
-        </form>
+        </div>
     </div>
 </div>
 
 {% endblock conteudo %}
+

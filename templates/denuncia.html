@@ -1,149 +1,157 @@
-{% extends 'base.html' %}
+{% extends 'base2.html' %}
 
 {% block conteudo %}
 
-<!-- Header Section -->
-<div class="d-flex flex-column flex-md-row gap-4 mb-5 align-items-start justify-content-between">
-    <div style="max-width: 650px;">
-        <h1 class="font-headline fw-bold text-primary-custom mb-3" style="font-size: 48px; line-height: 1.2;">Dê Voz a
-            Quem Não Pode Falar</h1>
-        <p class="fs-5 text-on-surface-variant mb-4" style="line-height: 1.6;">
-            Se você suspeita que um animal está sendo maltratado, negligenciado ou abandonado, denuncie imediatamente.
-            Sua ação pode salvar uma vida. Tratamos todos os relatos com a máxima seriedade e urgência.
-        </p>
-        <div class="d-flex align-items-center gap-2 text-secondary-container">
-            <span class="material-symbols-outlined icon-fill">shield</span>
-            <span class="fw-semibold" style="font-size: 14px;">Seu relato é completamente anônimo por padrão.</span>
-        </div>
-    </div>
-    <div class="d-none d-md-block flex-shrink-0">
-        <img alt="Segunda Chance Logo" class="img-fluid opacity-75"
-             src="https://lh3.googleusercontent.com/aida/AP1WRLvuGegKSrDxkXbcBPrGZGRagE7c-PwbR_9IegpUnbJyjE_nwfW4TebWrXG5D4jSyD8cAeOQjquOhwfC2vKjbLrhfjiVx-iR9Uy0Zx7HsTm3_1yzIq5eZF4cJ181DzPDDXIzEaFL6yIhN56BmOuoygK_uw8HlYpvZrMb0bbdB3zoAvzdhCXXqeCNldyiot_f-vYXPuONdmjAqJUgS9a8LUIQA9JoyMd58fNXFuCKnNNLwW4dBACNyG_pYA"
-             style="height: 128px; object-fit: contain;"/>
-    </div>
-</div>
-<div class="row g-4">
-    <!-- Form Section -->
-    <div class="col-lg-8">
-        <div class="bg-surface-container-lowest rounded-3 shadow-sm border border-surface-dim p-4 p-md-5">
-            <form action="#" method="POST">
-                <div class="mb-4">
-                    <label class="form-label fw-semibold" for="state" style="font-size: 14px;">Estado *</label>
-                    <select class="form-select border-2 p-3" id="state" name="state" required=""
-                            style="border-color: var(#bfc9c1); background-color: var(#f8f9ff);">
-                        <option value="">Selecione o Estado</option>
-                        <option value="AC">Acre</option>
-                        <option value="AL">Alagoas</option>
-                        <option value="AP">Amapá</option>
-                        <option value="AM">Amazonas</option>
-                        <option value="BA">Bahia</option>
-                        <option value="CE">Ceará</option>
-                        <option value="DF">Distrito Federal</option>
-                        <option value="ES">Espírito Santo</option>
-                        <option value="GO">Goiás</option>
-                        <option value="MA">Maranhão</option>
-                        <option value="MT">Mato Grosso</option>
-                        <option value="MS">Mato Grosso do Sul</option>
-                        <option value="MG">Minas Gerais</option>
-                        <option value="PA">Pará</option>
-                        <option value="PB">Paraíba</option>
-                        <option value="PR">Paraná</option>
-                        <option value="PE">Pernambuco</option>
-                        <option value="PI">Piauí</option>
-                        <option value="RJ">Rio de Janeiro</option>
-                        <option value="RN">Rio Grande do Norte</option>
-                        <option value="RS">Rio Grande do Sul</option>
-                        <option value="RO">Rondônia</option>
-                        <option value="RR">Roraima</option>
-                        <option value="SC">Santa Catarina</option>
-                        <option value="SP">São Paulo</option>
-                        <option value="SE">Sergipe</option>
-                        <option value="TO">Tocantins</option>
-                    </select>
-                </div>
-                <div class="mb-5">
-                    <label class="form-label fw-semibold" for="description" style="font-size: 14px;">Descrição Detalhada
-                        *</label>
-                    <textarea class="form-control border-2 p-3" id="description" name="description"
-                              placeholder="Por favor, descreva o que você viu, a condição do(s) animal(is) e quaisquer detalhes sobre as pessoas envolvidas, se souber."
-                              required="" rows="4"
-                              style="border-color: var(#bfc9c1); background-color: var(#f8f9ff); resize: vertical;"></textarea>
-                </div>
-                <!-- Action Area -->
-                <div class="pt-4 border-top border-surface-dim d-flex align-items-center justify-content-between flex-wrap gap-3">
-                    <div class="form-check d-flex align-items-center gap-2 m-0">
-                        <input class="form-check-input text-error m-0" id="urgent-case" name="urgent-case"
-                               style="border-color: var(#bfc9c1);" type="checkbox"/>
-                        <label class="form-check-label fw-bold text-error d-flex align-items-center gap-1"
-                               for="urgent-case" style="font-size: 14px;">
-                            <span class="material-symbols-outlined" style="font-size: 18px;">priority_high</span>Caso
-                            Urgente?
-                        </label>
+<main class="flex-grow-1 py-5">
+    <div class="container-xl">
+        <!-- Page Heading Section -->
+        <section class="mb-5" data-purpose="heading-section">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h1 class="page-title mb-3">Dê Voz a Quem Não Pode<br class="d-none d-md-inline"/> Falar</h1>
+                    <p class="text-muted fs-5 mb-4" style="line-height: 1.6; max-width: 740px;">
+                        Se você suspeita que um animal está sendo maltratado, negligenciado ou abandonado, denuncie
+                        imediatamente. Sua ação pode salvar uma vida. Tratamos todos os relatos com a máxima seriedade e
+                        urgência.
+                    </p>
+                    <div class="d-flex align-items-center gap-2 text-warning-emphasis">
+                        <span class="material-symbols-outlined fs-5 text-warning">shield</span>
+                        <span class="small fw-semibold text-muted">Seu relato é completamente anônimo por padrão.</span>
                     </div>
-                    <button class="btn bg-secondary-container border-0 px-4 py-2 fw-semibold d-flex align-items-center gap-2 shadow-sm"
-                            type="submit">
-                        <span class="material-symbols-outlined">send</span>
-                        Enviar Denúncia
-                    </button>
                 </div>
-            </form>
+            </div>
+        </section>
+        <!-- Main Layout: Form (Left) & Sidecards (Right) -->
+        <div class="row g-4 g-lg-5">
+            <!-- Column Left: Form -->
+            <div class="col-lg-7">
+                <div class="form-card p-4 p-md-5">
+                    <form action="#" id="report-form" method="POST" novalidate="">
+                        <!-- Field: State Dropdown -->
+                        <div class="mb-4">
+                            <label class="form-label fw-semibold text-dark mb-2" for="state-select">
+                                Estado <span class="text-danger">*</span>
+                            </label>
+                            <select class="form-select" id="state-select" required="">
+                                <option disabled="" selected="" value="">Selecione o Estado</option>
+                                <option value="AC">Acre</option>
+                                <option value="AL">Alagoas</option>
+                                <option value="AP">Amapá</option>
+                                <option value="AM">Amazonas</option>
+                                <option value="BA">Bahia</option>
+                                <option value="CE">Ceará</option>
+                                <option value="DF">Distrito Federal</option>
+                                <option value="ES">Espírito Santo</option>
+                                <option value="GO">Goiás</option>
+                                <option value="MA">Maranhão</option>
+                                <option value="MT">Mato Grosso</option>
+                                <option value="MS">Mato Grosso do Sul</option>
+                                <option value="MG">Minas Gerais</option>
+                                <option value="PA">Pará</option>
+                                <option value="PB">Paraíba</option>
+                                <option value="PR">Paraná</option>
+                                <option value="PE">Pernambuco</option>
+                                <option value="PI">Piauí</option>
+                                <option value="RJ">Rio de Janeiro</option>
+                                <option value="RN">Rio Grande do Norte</option>
+                                <option value="RS">Rio Grande do Sul</option>
+                                <option value="RO">Rondônia</option>
+                                <option value="RR">Roraima</option>
+                                <option value="SC">Santa Catarina</option>
+                                <option value="SP">São Paulo</option>
+                                <option value="SE">Sergipe</option>
+                                <option value="TO">Tocantins</option>
+                            </select>
+                        </div>
+                        <!-- Field: Detailed Description -->
+                        <div class="mb-4 pb-2">
+                            <label class="form-label fw-semibold text-dark mb-2" for="description-textarea">
+                                Descrição Detalhada <span class="text-danger">*</span>
+                            </label>
+                            <textarea class="form-control" id="description-textarea"
+                                      placeholder="Por favor, descreva o que você viu, a condição do(s) animal(is) e quaisquer detalhes sobre as pessoas envolvidas, se souber."
+                                      required="" rows="6"></textarea>
+                        </div>
+                        <!-- Form Action Row: Urgency Check & Submit Button -->
+                        <div class="d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 pt-3">
+                            <div class="form-check d-flex align-items-center gap-2 m-0 ps-0">
+                                <input class="form-check-input ms-0 mt-0" id="urgent-checkbox"
+                                       style="width: 1.15rem; height: 1.15rem;" type="checkbox"/>
+                                <label class="urgent-check-label ms-1" for="urgent-checkbox">
+                                    <span class="material-symbols-outlined fs-5 text-danger">priority_high</span>
+                                    <span>! Caso Urgente?</span>
+                                </label>
+                            </div>
+                            <button class="btn btn-sc-orange px-4 py-2 d-inline-flex align-items-center justify-content-center gap-2 rounded-3"
+                                    type="submit">
+                                <span class="material-symbols-outlined fs-5">send</span>
+                                <span>Enviar Denúncia</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Column Right: Information Cards -->
+            <div class="col-lg-5">
+                <div class="d-flex flex-column gap-4">
+                    <!-- Card 1: Por que Denunciar é Importante -->
+                    <div class="info-card-blue p-4" data-purpose="info-card-importance">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="icon-badge icon-badge-teal">
+                                <span class="material-symbols-outlined fs-5">shield</span>
+                            </div>
+                            <h2 class="fs-5 m-0 brand-font text-dark">Por que Denunciar é Importante</h2>
+                        </div>
+                        <p class="text-muted small mb-3" style="line-height: 1.6;">
+                            Animais não podem pedir ajuda. Eles dependem inteiramente de indivíduos compassivos para
+                            notar quando algo está errado e agir.
+                        </p>
+                        <ul class="list-unstyled d-flex flex-column gap-2 mb-0">
+                            <li class="d-flex align-items-start gap-2 small text-secondary">
+                                <span class="material-symbols-outlined fs-5 text-sc-primary flex-shrink-0">check_circle</span>
+                                <span>Permite resgate e cuidados médicos imediatos.</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2 small text-secondary">
+                                <span class="material-symbols-outlined fs-5 text-sc-primary flex-shrink-0">check_circle</span>
+                                <span>Ajuda autoridades a construir casos contra os agressores.</span>
+                            </li>
+                            <li class="d-flex align-items-start gap-2 small text-secondary">
+                                <span class="material-symbols-outlined fs-5 text-sc-primary flex-shrink-0">check_circle</span>
+                                <span>Previne danos futuros a outros animais.</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- Card 2: Estritamente Confidencial -->
+                    <div class="info-card-subtle p-4" data-purpose="info-card-confidentiality">
+                        <div class="d-flex align-items-center gap-2 mb-3">
+                            <div class="icon-badge icon-badge-orange">
+                                <span class="material-symbols-outlined fs-5">visibility_off</span>
+                            </div>
+                            <h2 class="fs-5 m-0 brand-font text-dark">Estritamente Confidencial</h2>
+                        </div>
+                        <p class="text-muted small mb-0" style="line-height: 1.65;">
+                            Entendemos que denunciar abusos pode ser assustador, especialmente se envolver vizinhos ou
+                            conhecidos. <strong>Sua identidade é protegida.</strong> A menos que você escolha
+                            explicitamente fornecer detalhes de contato para acompanhamento, sua denúncia é processada
+                            anonimamente para garantir sua segurança.
+                        </p>
+                    </div>
+                    <!-- Card 3: Perigo Imediato? -->
+                    <div class="info-card-urgent p-4 text-center" data-purpose="info-card-immediate-danger">
+                        <div class="mb-2">
+                            <span class="material-symbols-outlined text-danger fs-1">asterisk</span>
+                        </div>
+                        <h3 class="fs-6 brand-font text-danger fw-bold mb-2">Perigo Imediato?</h3>
+                        <p class="small text-danger mb-0" style="line-height: 1.6; opacity: 0.95;">
+                            Se a vida de um animal está em perigo ativo e imediato neste momento, por favor, ligue para
+                            os serviços de emergência (190) ou para a polícia local imediatamente antes de enviar este
+                            formulário.
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Info Panel Side -->
-    <div class="col-lg-4 d-flex flex-column gap-4">
-        <!-- Importance Card -->
-        <div class="bg-surface-container-low rounded-3 p-4 border border-surface-dim">
-            <div class="d-flex align-items-start gap-3 mb-3">
-                <div class="p-2 bg-primary-container rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
-                    <span class="material-symbols-outlined">health_and_safety</span>
-                </div>
-                <h3 class="font-headline fs-4 fw-semibold text-primary-custom m-0">Por que Denunciar é Importante</h3>
-            </div>
-            <p class="text-on-surface-variant mb-3" style="line-height: 1.6;">
-                Animais não podem pedir ajuda. Eles dependem inteiramente de indivíduos compassivos para notar quando
-                algo está errado e agir.
-            </p>
-            <ul class="list-unstyled text-on-surface-variant m-0 d-flex flex-column gap-2" style="font-size: 14px;">
-                <li class="d-flex align-items-center gap-2">
-                    <span class="material-symbols-outlined text-primary-custom"
-                          style="font-size: 18px;">check_circle</span>
-                    Permite resgate e cuidados médicos imediatos.
-                </li>
-                <li class="d-flex align-items-center gap-2">
-                    <span class="material-symbols-outlined text-primary-custom"
-                          style="font-size: 18px;">check_circle</span>
-                    Ajuda autoridades a construir casos contra os agressores.
-                </li>
-                <li class="d-flex align-items-center gap-2">
-                    <span class="material-symbols-outlined text-primary-custom"
-                          style="font-size: 18px;">check_circle</span>
-                    Previne danos futuros a outros animais.
-                </li>
-            </ul>
-        </div>
-        <!-- Anonymity Card -->
-        <div class="bg-surface-container-low rounded-3 p-4 border border-surface-dim">
-            <div class="d-flex align-items-start gap-3 mb-3">
-                <div class="p-2 bg-secondary-container rounded-circle d-flex align-items-center justify-content-center flex-shrink-0">
-                    <span class="material-symbols-outlined">visibility_off</span>
-                </div>
-                <h3 class="font-headline fs-4 fw-semibold m-0">Estritamente Confidencial</h3>
-            </div>
-            <p class="text-on-surface-variant m-0" style="line-height: 1.6;">
-                Entendemos que denunciar abusos pode ser assustador, especialmente se envolver vizinhos ou conhecidos.
-                <strong>Sua identidade é protegida.</strong> A menos que você escolha explicitamente fornecer detalhes
-                de contato para acompanhamento, sua denúncia é processada anonimamente para garantir sua segurança.
-            </p>
-        </div>
-        <!-- Emergency Contact Note -->
-        <div class="bg-error-container rounded-3 p-4 text-center">
-            <span class="material-symbols-outlined d-block mb-2" style="font-size: 32px;">emergency</span>
-            <h4 class="fw-semibold mb-2" style="font-size: 14px;">Perigo Imediato?</h4>
-            <p class="mb-0" style="font-size: 14px;">Se a vida de um animal está em perigo ativo e imediato neste
-                momento, por favor, ligue para os serviços de emergência (190) ou para a polícia local imediatamente
-                antes de enviar este formulário.</p>
-        </div>
-    </div>
-</div>
+</main>
 
 {% endblock conteudo %}

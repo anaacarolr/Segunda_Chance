@@ -27,34 +27,34 @@
         <div class="row g-4">
             <!-- Stat 1 -->
             <div class="col-md-4">
-                <div class="card stat-card bg-surface-container-lowest shadow-ambient hover-lift h-100 text-center p-4 p-md-5">
-                    <div class="stat-icon-wrapper bg-surface-container text-primary">
-                        <span class="material-symbols-outlined icon-lg">hevc</span>
+                    <div class="card stat-card shadow-sm h-100 text-center p-4 p-md-5">
+                        <div class="stat-icon-wrapper mx-auto">
+                            <span class="material-symbols-outlined text-primary-stat">favorite</span>
+                        </div>
+                        <h2 class="display-6 fw-bold font-headline text-primary-stat mb-2">500+</h2>
+                        <p class="text-secondary mb-0 fw-medium">Animais Adotados</p>
                     </div>
-                    <h2 class="h1 font-headline text-primary mb-2">500+</h2>
-                    <p class="text-on-surface-variant mb-0">Animais Adotados</p>
                 </div>
-            </div>
-            <!-- Stat 2 -->
-            <div class="col-md-4">
-                <div class="card stat-card bg-surface-container-lowest shadow-ambient hover-lift h-100 text-center p-4 p-md-5">
-                    <div class="stat-icon-wrapper bg-surface-container text-secondary-container">
-                        <span class="material-symbols-outlined icon-lg">pets</span>
+                <!-- Stat 2 -->
+                <div class="col-md-4">
+                    <div class="card stat-card shadow-sm h-100 text-center p-4 p-md-5">
+                        <div class="stat-icon-wrapper mx-auto">
+                            <span class="material-symbols-outlined text-secondary-container">pets</span>
+                        </div>
+                        <h2 class="display-6 fw-bold font-headline text-secondary-container mb-2">120</h2>
+                        <p class="text-secondary mb-0 fw-medium">Disponíveis</p>
                     </div>
-                    <h2 class="h1 font-headline text-secondary-container mb-2">120</h2>
-                    <p class="text-on-surface-variant mb-0">Disponíveis</p>
                 </div>
-            </div>
-            <!-- Stat 3 -->
-            <div class="col-md-4">
-                <div class="card stat-card bg-surface-container-lowest shadow-ambient hover-lift h-100 text-center p-4 p-md-5">
-                    <div class="stat-icon-wrapper bg-surface-container text-tertiary">
-                        <span class="material-symbols-outlined icon-lg">group</span>
+                <!-- Stat 3 -->
+                <div class="col-md-4">
+                    <div class="card stat-card shadow-sm h-100 text-center p-4 p-md-5">
+                        <div class="stat-icon-wrapper mx-auto">
+                            <span class="material-symbols-outlined text-tertiary">group</span>
+                        </div>
+                        <h2 class="display-6 fw-bold font-headline text-tertiary mb-2">300</h2>
+                        <p class="text-secondary mb-0 fw-medium">Voluntários</p>
                     </div>
-                    <h2 class="h1 font-headline text-tertiary mb-2">300</h2>
-                    <p class="text-on-surface-variant mb-0">Voluntários</p>
                 </div>
-            </div>
         </div>
     </div>
 </section>
@@ -74,7 +74,7 @@
                         <p class="text-on-error-container opacity-75 mb-4 max-w-2xl mx-auto">Se você presenciar
                             crueldade ou negligência contra animais, aja imediatamente. Sua denúncia é confidencial
                             e pode salvar uma vida.</p>
-                        <a class="btn-custom-error shadow-sm hover-lift" href="#">
+                        <a class="btn-custom-error shadow-sm hover-lift" href="{{ url_for('denuncia_anonima') }}">
                             <span class="material-symbols-outlined" style="font-size: 20px;">campaign</span>
                             Fazer Denúncia
                         </a>
