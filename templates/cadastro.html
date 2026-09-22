@@ -31,14 +31,14 @@
                 role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
-                       href="{{ url_for('cadastro') }}">
+                       href="{{ url_for('cadastrar_usuario') }}">
                         <span class="material-symbols-outlined">person</span>
                         Quero Adotar
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
-                       href="{{ url_for('cadastro_ong') }}">
+                       href="{{ url_for('cadastrar_ong') }}">
                         <span class="material-symbols-outlined">domain</span>
                         Somos uma ONG
                     </a>
@@ -49,21 +49,21 @@
                 <!-- User Registration Form -->
                 <div aria-labelledby="pills-user-tab" class="tab-pane fade show active flex-grow-1" id="pills-user"
                      role="tabpanel" tabindex="0">
-                    <form class="d-flex flex-column h-100" onsubmit="event.preventDefault();">
+                    <form class="d-flex flex-column h-100" action="{{url_for('cadastrar_usuario')}}" method="post">
                         <div class="mb-3">
                             <label class="form-label fw-semibold" for="user-firstname">Nome</label>
-                            <input class="form-control py-2 px-3" id="user-firstname" placeholder="Jane" type="text"/>
+                            <input class="form-control py-2 px-3" id="user-firstname" name="form-nome" placeholder="Jane" type="text"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold" for="user-email">E-mail</label>
-                            <input class="form-control py-2 px-3" id="user-email" placeholder="jane@exemplo.com"
+                            <input class="form-control py-2 px-3" id="user-email" name="form-email" placeholder="jane@exemplo.com"
                                    type="email"/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold" for="user-password">Senha</label>
                             <div class="position-relative">
                                 <input class="form-control py-2 px-3 pe-5" id="user-password" placeholder="********"
-                                       type="password"/>
+                                       type="password" name="form-senha"/>
                                 <button class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-secondary text-decoration-none"
                                         type="button">
                                     <span class="material-symbols-outlined">visibility_off</span>
@@ -71,12 +71,12 @@
                             </div>
                         </div>
                         <div class="mt-auto pt-4">
-                            <a class="btn btn-success w-100 py-3 fw-semibold rounded-3 shadow-sm"
-                                    type="submit" href="{{ url_for('adocao') }}">
+                            <button class="btn btn-success w-100 py-3 fw-semibold rounded-3 shadow-sm"
+                                    type="submit">
                                 Criar Conta de Usuário
-                            </a>
+                            </button>
                             <p class="text-center mt-3 text-secondary small">
-                                Já tem uma conta? <a class="text-decoration-none fw-bold" href="#"
+                                Já tem uma conta? <a class="text-decoration-none fw-bold" href="{{ url_for('login_usuarios') }}"
                                                      style="color: var(#0f5238);">Entrar</a>
                             </p>
                         </div>

@@ -19,13 +19,17 @@
 
             <!-- Botões de Ação: Ver Denúncias e Cadastrar Novo Animal -->
             <div class="col-lg-6 col-md-12 d-flex flex-wrap justify-content-lg-end gap-3">
-                <a href="{{ url_for('ver_denuncias') }}" class="btn btn-brand-outline shadow-sm px-4 py-2">
+                <a href="{{ url_for('listar_denuncia_anonima') }}" class="btn btn-brand-outline shadow-sm px-4 py-2">
                     <span class="material-symbols-outlined fs-5">warning</span>
                     Ver Denúncias
                 </a>
                 <a href="{{ url_for('cadastro_animal') }}" class="btn btn-brand-outline shadow-sm px-4 py-2">
                     <span class="material-symbols-outlined fs-5">add_circle</span>
                     Cadastrar Novo Animal
+                </a>
+                 <a href="{{ url_for('listar_animal') }}" class="btn btn-brand-outline shadow-sm px-4 py-2">
+                    <span class="material-symbols-outlined fs-5">add_circle</span>
+                    Ver animais
                 </a>
             </div>
         </div>
