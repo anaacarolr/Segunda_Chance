@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Base</title>
+</head>
+<body>
+<div>
+    {% if current_user.is_authenticated %}
+          nome:{{current_user.nome}} - {{current_user.email}}
+    <a href="{{url_for('logout')}}">Sair</a>
+    {% endif %}
+</div>
+{% for mensagem in get_flashed_messages() %}
+<div class="item_lista">
+    {{mensagem}}
+</div>
+{% endfor %}
+
+
+<!-- Inicio do corpo da página que sera utilizada como template -->
+<div>
+    {% block conteudo %}
+    {% endblock conteudo %}
+</div>
+</body>
+</html>

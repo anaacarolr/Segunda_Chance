@@ -1,0 +1,40 @@
+{% extends 'home.html' %}
+
+{% block conteudo %}
+<div class="fundo">
+    <div class="h1">
+        <h1>Comprinhas</h1>
+    </div>
+
+
+    <div class="calculos">
+        {% for i in list_p %}
+        <div class=" card d-flex justify-content-center align-items-center card_calculo icon">
+            <div class="h3">
+                <img src="{{i['images'][0]}}" alt="card" width="280px" height="auto">
+                <p> {{i['tittle']}} </p>
+                <div class="categoria">
+                    <p> {{i['category'].capitalize()}} </p>
+                </div>
+                <div class="precos">
+                    <div class="preco">
+                        <p> ${{i['price']}} </p>
+                    </div>
+                    <div class="avaliacao">
+                        <p> ★{{i['rating']}} </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+            crossorigin="anonymous"></script>
+
+
+</div>
+
+
+{% endblock %}
