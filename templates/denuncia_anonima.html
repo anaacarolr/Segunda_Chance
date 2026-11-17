@@ -3,7 +3,7 @@
 {% block conteudo %}
 
 <!-- Header Section -->
-<div class="d-flex flex-column flex-md-row gap-4 mb-5 align-items-start justify-content-between">
+<div class="d-flex flex-column flex-md-row gap-4 mb-5 justify-content-between">
     <div style="max-width: 650px;">
         <h1 class="font-headline fw-bold text-primary-custom mb-3" style="font-size: 48px; line-height: 1.2;">Dê Voz a
             Quem Não Pode Falar</h1>
@@ -18,13 +18,13 @@
     </div>
 </div>
 <div class="row g-4">
-    <!-- Form Section -->
+    <!-- Formulario -->
     <div class="col-lg-8">
         <div class="bg-surface-container-lowest rounded-3 shadow-sm border border-surface-dim p-4 p-md-5">
-            <form action="#" method="POST">
+            <form action="{{url_for('criar_denuncia_anonima')}}" method="POST">
                 <div class="mb-4">
-                    <label class="form-label fw-semibold" for="state" style="font-size: 14px;">Estado *</label>
-                    <select class="form-select border-2 p-3" id="state" name="state" required=""
+                    <label class="form-label fw-semibold" for="form-estado" style="font-size: 14px;">Estado *</label>
+                    <select class="form-select border-2 p-3" id="form-estado" name="form-estado" required=""
                             style="border-color: var(#bfc9c1); background-color: var(#f8f9ff);">
                         <option value="">Selecione o Estado</option>
                         <option value="AC">Acre</option>
@@ -57,9 +57,9 @@
                     </select>
                 </div>
                 <div class="mb-5">
-                    <label class="form-label fw-semibold" for="description" style="font-size: 14px;">Descrição Detalhada
+                    <label class="form-label fw-semibold" for="form-descricao" style="font-size: 14px;">Descrição Detalhada
                         *</label>
-                    <textarea class="form-control border-2 p-3" id="description" name="description"
+                    <textarea class="form-control border-2 p-3" id="form-descricao" name="form-descricao"
                               placeholder="Por favor, descreva o que você viu, a condição do(s) animal(is) e quaisquer detalhes sobre as pessoas envolvidas, se souber."
                               required="" rows="4"
                               style="border-color: var(#bfc9c1); background-color: var(#f8f9ff); resize: vertical;"></textarea>
@@ -67,16 +67,16 @@
                 <!-- Action Area -->
                 <div class="pt-4 border-top border-surface-dim d-flex align-items-center justify-content-between flex-wrap gap-3">
                     <div class="form-check d-flex align-items-center gap-2 m-0">
-                        <input class="form-check-input text-error m-0" id="urgent-case" name="urgent-case"
-                               style="border-color: var(#bfc9c1);" type="checkbox"/>
+                        <input class="form-check-input text-error m-0" id="form-urgencia" name="form-urgencia"
+                               style="border-color: var(#bfc9c1);" type="checkbox" />
                         <label class="form-check-label fw-bold text-error d-flex align-items-center gap-1"
-                               for="urgent-case" style="font-size: 14px;">
+                               for="form-urgencia" style="font-size: 14px;">
                             <span class="material-symbols-outlined" style="font-size: 18px;">priority_high</span>Caso
                             Urgente?
                         </label>
                     </div>
                     <button class="btn bg-secondary-container border-0 px-4 py-2 fw-semibold d-flex align-items-center gap-2 shadow-sm"
-                            type="submit">
+                            type="submit" >
                         <span class="material-symbols-outlined">send</span>
                         Enviar Denúncia
                     </button>

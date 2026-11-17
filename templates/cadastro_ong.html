@@ -19,8 +19,6 @@
         <!-- Right Side: Registration Form -->
         <div class="col-lg-6 d-flex flex-column p-4 p-md-5 m-25 custom-scrollbar overflow-auto"
              style="max-height: 85vh;">
-            <!-- Mobile Header Logo -->
-
 
             <div class="mb-4">
                 <h1 class="h2 fw-bold text-dark mb-2">Criar uma Conta</h1>
@@ -31,15 +29,15 @@
                 role="tablist">
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
-                       href="{{ url_for('cadastrar_usuarios') }}">
-                        <span class="material-symbols-outlined">person</span>
+                       href="{{ url_for('cadastrar_usuario') }}">
+                        <span class="material-symbols-outlined"></span>
                         Quero Adotar
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
                        href="{{ url_for('cadastrar_ong') }}">
-                        <span class="material-symbols-outlined">domain</span>
+                        <span class="material-symbols-outlined"></span>
                         Somos uma ONG
                     </a>
                 </li>
@@ -49,37 +47,37 @@
                 <!-- User Registration Form -->
                 <div aria-labelledby="pills-ong-tab" class="tab-pane fade show active flex-grow-1" id="pills-ong"
                      role="tabpanel" tabindex="0">
-                    <form class="d-flex flex-column h-100" onsubmit="event.preventDefault();">
-                        <div class="mb-3">
-                            <label class="form-label fw-semibold" for="ong-firstname">Nome da Organização </label>
-                            <input class="form-control py-2 px-3" id="ong-firstname" placeholder="EX: Instituto Cão Feliz" type="text"/>
-                        </div>
+                    <form class="d-flex flex-column h-100" action="{{url_for('cadastrar_ong')}}" method="post">
                         <div class="mb-3">
                             <label class="form-label fw-semibold" for="ong-cnpj">CNPJ</label>
-                            <input class="form-control py-2 px-3" id="ong-cnpj" placeholder="00.000.000/0000-00"
-                                   type="email"/>
+                            <input class="form-control py-2 px-3" id="ong-cnpj" name="form-cnpj"
+                                   placeholder="00.000.000/0000-00"
+                                   type="text" onchange="get_cnpj()"/>
                         </div>
                         <div class="mb-3">
-                            <label class="form-label fw-semibold" for="ong-estado">estado</label>
-                            <input class="form-control py-2 px-3" id="ong-estado" placeholder="São Paulo"
-                                   type="text"/>
+                            <label class="form-label fw-semibold" for="form-nome">Nome da Organização </label>
+                            <input class="form-control py-2 px-3" id="form-nome" name="form-nome"
+                                   placeholder="EX: Instituto Cão Feliz" type="text" readonly/>
+                        </div>
+                        <div class="mb-3">
+                            <label class="form-label fw-semibold" for="form-estado">estado</label>
+                            <input class="form-control py-2 px-3" id="form-estado" name="form-estado"
+                                   placeholder="São Paulo"
+                                   type="text" readonly/>
                         </div>
                         <div class="mb-3">
                             <label class="form-label fw-semibold" for="user-password">Senha</label>
                             <div class="position-relative">
-                                <input class="form-control py-2 px-3 pe-5" id="user-password" placeholder="********"
+                                <input class="form-control py-2 px-3 pe-5" id="user-password" name="form-senha"
+                                       placeholder="********"
                                        type="password"/>
-                                <button class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-secondary text-decoration-none"
-                                        type="button">
-                                    <span class="material-symbols-outlined">visibility_off</span>
-                                </button>
                             </div>
                         </div>
                         <div class="mt-auto pt-4">
-                            <a class="btn btn-success w-100 py-3 fw-semibold rounded-3 shadow-sm"
-                                    type="submit" href="{{ url_for('ongs') }}">
+                            <button class="btn btn-success w-100 py-3 fw-semibold rounded-3 shadow-sm"
+                               type="submit">
                                 Criar Conta de ONG
-                            </a>
+                            </button>
                         </div>
                     </form>
                 </div>
@@ -87,6 +85,28 @@
         </div>
     </div>
 </div>
+<script>
+    async function get_cnpj() {
+        const input_cnpj = document.getElementById('ong-cnpj')
+        const input_nome = document.getElementById('form-nome')
+        const input_estado = document.getElementById('form-estado')
+
+        console.log(input_cnpj)
+
+        let url = "https://publica.cnpj.ws/cnpj/" + input_cnpj.value
+        let resultado = await fetch(url)
+
+        if (resultado.ok) {
+            let dados = await resultado.json()
+
+            input_nome.value = dados.razao_social
+            input_estado.value = dados.estabelecimento.estado.nome
+        } else {
+            input_nome.value = ""
+            input_estado.value = ""
+        }
+    }
+</script>
 
 {% endblock conteudo %}
 

@@ -8,7 +8,7 @@
         <div class="row justify-content-center">
             <div class="col-12 col-sm-10 col-md-8 col-lg-5 col-xl-4">
 
-                <div class="login-card p-4 p-sm-5">
+                <div class="p-1">
 
                     <!-- Cabeçalho do Card -->
                     <div class="text-center mb-4">
@@ -22,49 +22,55 @@
 
                     <!-- Formulário -->
 
-                    <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border" id="loginTabs" role="tablist" style="background-color: rgb(241, 245, 249) !important;">
-                        <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
-                                id="tab-pf" type="button" onclick="switchLoginMode('pf')" style="transition: all 0.2s;" href="{{ url_for('login_usuarios') }}">
-                            <span class="material-symbols-outlined fs-6">person</span>
-                            <span class="">Usuário</span>
-                        </a>
-                    </div>
-                    <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border" id="loginTabs2" role="tablist" style="background-color: rgb(241, 245, 249) !important;">
-                        <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
-                                id="tab-ong" type="button" onclick="switchLoginMode('ong')"
-                                style="transition: all 0.2s;" href="{{ url_for('login_ong') }}">
-                            <span class="material-symbols-outlined fs-6">corporate_fare</span>
-                            <span class="">Organização / ONG</span>
-                        </a>
+                    <div class="p-1 mb-4 d-flex row w-100 justify-content-around" id="loginTabs"
+                             role="tablist">
+                        <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border col-5"
+                             role="tablist" style="background-color: rgb(241, 245, 249) !important;">
+                            <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
+                               id="tab-pf" type="button" onclick="switchLoginMode('pf')" style="transition: all 0.2s;"
+                               href="{{ url_for('login_usuarios') }}">
+                                <span class="material-symbols-outlined fs-6"></span>
+                                <span class="">Usuário</span>
+                            </a>
+                        </div>
+                        <div class="nav nav-pills nav-fill p-1 bg-light rounded-pill mb-4 border col-5"
+                             role="tablist" style="background-color: rgb(241, 245, 249) !important;">
+                            <a class="nav-link rounded-pill py-2 px-3 fw-semibold small d-flex align-items-center justify-content-center gap-1"
+                               id="tab-ong" type="button" onclick="switchLoginMode('ong')"
+                               style="transition: all 0.2s;" href="{{ url_for('login_ong') }}">
+                                <span class="material-symbols-outlined fs-6"></span>
+                                <span class="">ONG</span>
+                            </a>
+                        </div>
                     </div>
 
-                    <form onsubmit="event.preventDefault();">
+                    <form action="{{url_for('login_usuarios')}}" method="post">
                         <!-- Campo Identificador (E-mail ou CNPJ) -->
-                        <div id="field-pf" class="mb-3 position-relative">
-                            <span class="material-symbols-outlined input-icon fs-5">mail</span>
-                            <div class="form-floating">
-                                <input type="email" class="form-control" id="email" placeholder="nome@exemplo.com"
-                                       required="">
-                                <label for="email" class="">E-mail</label>
+                        <div id="field-pf" class="mb-3 position-relative d-flex align-items-center gap-2">
+                            <span class="material-symbols-outlined input-icon fs-4">mail</span>
+                            <div class="form-floating w-100">
+                                <input type="email" class="form-control" id="form_email" placeholder="nome@exemplo.com"
+                                       name="form_email" required>
+                                <label for="form_email" class="">E-mail</label>
                             </div>
                         </div>
 
                         <!-- Campo Senha -->
-                        <div class="mb-3 position-relative">
-                            <span class="material-symbols-outlined input-icon fs-5">key</span>
-                            <div class="form-floating">
-                                <input type="password" class="form-control" id="senha" placeholder="Sua senha"
-                                       required="">
-                                <label for="senha" class="">Senha</label>
+                        <div class="mb-3 position-relative d-flex align-items-center gap-2">
+                            <span class="material-symbols-outlined input-icon fs-4">key</span>
+                            <div class="form-floating w-100">
+                                <input type="password" class="form-control" id="form_senha" placeholder="Sua senha"
+                                       name="form_senha" required>
+                                <label for="form_senha" class="">Senha</label>
                             </div>
                         </div>
 
                         <!-- Botão de Acesso Principal -->
-                        <a type="submit"
-                                class="btn btn-primary w-100 py-3 shadow-sm d-flex align-items-center justify-content-center gap-2 mb-3" href="{{ url_for('listar_animais') }}">
+                        <button type="submit"
+                                class="btn btn-primary w-100 py-3 shadow-sm d-flex align-items-center justify-content-center gap-2 mb-3">
                             <span class="material-symbols-outlined fs-5">login</span>
-                            <span class="">Entrar na Conta</span>
-                        </a>
+                            Entrar na Conta
+                        </button>
 
                     </form>
 

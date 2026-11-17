@@ -32,14 +32,14 @@
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
                        href="{{ url_for('cadastrar_usuario') }}">
-                        <span class="material-symbols-outlined">person</span>
+                        <span class="material-symbols-outlined"></span>
                         Quero Adotar
                     </a>
                 </li>
                 <li class="nav-item" role="presentation">
                     <a class="btn btn-success py-1 d-flex align-items-center justify-content-center gap-0"
                        href="{{ url_for('cadastrar_ong') }}">
-                        <span class="material-symbols-outlined">domain</span>
+                        <span class="material-symbols-outlined"></span>
                         Somos uma ONG
                     </a>
                 </li>
@@ -64,10 +64,6 @@
                             <div class="position-relative">
                                 <input class="form-control py-2 px-3 pe-5" id="user-password" placeholder="********"
                                        type="password" name="form-senha"/>
-                                <button class="btn btn-link position-absolute end-0 top-50 translate-middle-y text-secondary text-decoration-none"
-                                        type="button">
-                                    <span class="material-symbols-outlined">visibility_off</span>
-                                </button>
                             </div>
                         </div>
                         <div class="mt-auto pt-4">
@@ -75,10 +71,6 @@
                                     type="submit">
                                 Criar Conta de Usuário
                             </button>
-                            <p class="text-center mt-3 text-secondary small">
-                                Já tem uma conta? <a class="text-decoration-none fw-bold" href="{{ url_for('login_usuarios') }}"
-                                                     style="color: var(#0f5238);">Entrar</a>
-                            </p>
                         </div>
                     </form>
                 </div>

@@ -29,7 +29,7 @@
 
                 <!-- Card do Formulário -->
                 <div class="card card-custom p-4 p-md-5">
-                    <form action="/animal_post" method="POST">
+                    <form action="{{ url_for('cadastro_animal' )}}" method="POST">
 
                         <!-- Bloco 1: Identificação Básica -->
                         <h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
@@ -38,15 +38,18 @@
 
                         <div class="row g-3 mb-4">
                             <!-- Nome do Animal -->
+                            <!-- Estética -->
                             <div class="col-md-6">
-                                <label for="nomeAnimal" class="form-label">Nome do Animal <span
+                                <label for="form-nome" class="form-label">Nome do Animal <span
                                         class="text-danger">*</span></label>
                                 <div class="input-group">
                                         <span class="input-group-text bg-light text-muted border-end-0"
                                               style="border-radius: 12px 0 0 12px;">
                                             <span class="material-symbols-outlined fs-5">edit</span>
                                         </span>
-                                    <input type="text" class="form-control border-start-0" id="nomeAnimal" name="nome"
+                                    <!-- input para escrever -->
+                                    <input type="text" class="form-control border-start-0" id="form-nome"
+                                           name="form-nome"
                                            placeholder="Ex: Rex, Mel, Thor..." required
                                            style="border-radius: 0 12px 12px 0;">
                                 </div>
@@ -54,33 +57,33 @@
 
                             <!-- Tipo / Espécie -->
                             <div class="col-md-6">
-                                <label for="tipoAnimal" class="form-label">Tipo de Animal <span
+                                <label for="form-categoria" class="form-label">Tipo de Animal <span
                                         class="text-danger">*</span></label>
-                                <input type="text" class="form-control border-start-0" id="tipoAnimal" name="tipo"
+                                <input type="text" class="form-control border-start-0" id="form-categoria"
+                                       name="form-categoria"
                                        placeholder="Ex: Gato, Cachorro, Coelho..." required
                                        style="border-radius: 0 12px 12px 0;">
                             </div>
 
                             <!-- Raça -->
                             <div class="col-md-6">
-                                <label for="racaAnimal" class="form-label">Raça <span
+                                <label for="form-raca" class="form-label">Raça <span
                                         class="text-danger">*</span></label>
-                                <input type="text" class="form-control" id="racaAnimal" name="raca"
+                                <input type="text" class="form-control" id="form-raca" name="form-raca"
                                        placeholder="Ex: Vira-lata (SRD), Labrador, Siamês..." required>
                             </div>
 
                             <!-- Idade -->
                             <div class="col-md-6">
-                                <label for="idadeAnimal" class="form-label">Idade <span
+                                <label for="form-idade" class="form-label">Idade <span
                                         class="text-danger">*</span></label>
                                 <div class="row g-2">
                                     <div class="col-7">
-                                        <input type="number" min="0" max="30" class="form-control" id="idadeAnimal"
-                                               name="idade_numero" placeholder="Ex: 2" required>
+                                        <input type="number" min="0" max="30" class="form-control" id="form-idade"
+                                               name="form-idade" placeholder="Ex: 2" required>
                                     </div>
                                     <div class="col-5">
                                         <select class="form-select" name="idade_unidade">
-                                            <option value="anos" selected>Ano(s)</option>
                                             <option value="meses">Mês(es)</option>
                                         </select>
                                     </div>
@@ -98,14 +101,13 @@
                         <div class="row g-3 mb-4">
                             <!-- Porte -->
                             <div class="col-md-6">
-                                <label for="porteAnimal" class="form-label">Porte <span
+                                <label for="form-porte" class="form-label">Porte <span
                                         class="text-danger">*</span></label>
-                                <select class="form-select" id="porteAnimal" name="porte" required>
+                                <select class="form-select" id="form-porte" name="form-porte" required>
                                     <option value="" selected disabled>Selecione o porte...</option>
                                     <option value="pequeno">Pequeno (até 10 kg)</option>
                                     <option value="medio">Médio (11 a 25 kg)</option>
                                     <option value="grande">Grande (26 a 45 kg)</option>
-                                    <option value="gigante">Gigante (acima de 45 kg)</option>
                                 </select>
                             </div>
 
@@ -114,64 +116,50 @@
                                 <label class="form-label d-block">Sexo <span class="text-danger">*</span></label>
                                 <div class="d-flex gap-4 pt-1">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sexo" id="sexoMacho"
+                                        <input class="form-check-input" type="radio" name="sexo" id="form-sexoM"
                                                value="Macho" required>
-                                        <label class="form-check-label fw-semibold" for="sexoMacho">
+                                        <label class="form-check-label fw-semibold" for="form-sexoM">
                                             <span class="material-symbols-outlined align-middle fs-6 text-primary">male</span>
                                             Macho
                                         </label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="sexo" id="sexoFemea"
+                                        <input class="form-check-input" type="radio" name="sexo" id="form-sexo"
                                                value="Fêmea" required>
-                                        <label class="form-check-label fw-semibold" for="sexoFemea">
+                                        <label class="form-check-label fw-semibold" for="form-sexo">
                                             <span class="material-symbols-outlined align-middle fs-6"
                                                   style="color: #d63384;">female</span> Fêmea
                                         </label>
                                     </div>
                                 </div>
                             </div>
-
-                            <!-- Adotado ou Não -->
-                            <div class="col-12 mt-3">
-                                <label class="form-label d-block">Situação / Status de Adoção <span class="text-danger">*</span></label>
-                                <div class="row g-3">
-                                    <div class="col-md-6">
-                                        <div class="status-toggle-card h-100">
-                                            <div class="form-check d-flex align-items-center gap-2">
-                                                <input class="form-check-input mt-0" type="radio" name="status_adocao"
-                                                       id="statusDisponivel" value="disponivel" checked>
-                                                <label class="form-check-label w-100 cursor-pointer"
-                                                       for="statusDisponivel">
-                                                    <div class="d-flex align-items-center justify-content-between">
-                                                        <span class="fw-bold text-success">Não Adotado (Disponível)</span>
-                                                        <span class="badge bg-success-subtle text-success border border-success-subtle">Para Adoção</span>
-                                                    </div>
-                                                    <small class="text-muted d-block mt-1">O animal aparecerá listado
-                                                        publicamente para novos tutores.</small>
-                                                </label>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="status-toggle-card h-100">
-                                            <div class="form-check d-flex align-items-center gap-2">
+                            <div class="col-md-6">
+                                <div class="status-toggle-card h-100">
+                                    <div class="form-check d-flex align-items-center gap-2">
 
 
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-
+                        <!-- Card Auxiliar de Dicas -->
+                        <div class="mt-4 p-3 bg-white rounded-4 border d-flex align-items-center gap-3">
+                            <div class="icon-box bg-warning-subtle text-warning-emphasis"
+                                 style="width: 38px; height: 38px;">
+                                <span class="material-symbols-outlined fs-5">tips_and_updates</span>
+                            </div>
+                            <p class="mb-0 small text-muted">
+                                <strong class="text-dark">Dica de Adoção:</strong> Animais com fotos nítidas e detalhes
+                                sobre
+                                temperamento têm <strong>3x mais chances</strong> de encontrar um lar amoroso
+                                rapidamente.
+                            </p>
+                        </div>
                         <hr class="my-4 text-muted opacity-25">
-
                         <!-- Bloco 3: Fotos e Descrição Adicional -->
-                        <h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
+                        <!--<h5 class="fw-bold mb-3 d-flex align-items-center gap-2" style="color: var(#2d6a4f);">
                             <span class="material-symbols-outlined fs-5">photo_camera</span> Foto e Observações
                         </h5>
-
                         <div class="row g-3 mb-4">
                             <div class="col-12">
                                 <div class="upload-area">
@@ -188,14 +176,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12 mt-3">
-                                <label for="descricaoAnimal" class="form-label">História e Temperamento
-                                    (Opcional)</label>
-                                <textarea class="form-control" id="descricaoAnimal" name="descricao" rows="3"
-                                          placeholder="Conte sobre a personalidade (dócil, brincalhão, calmo), castração, vacinas tomadas ou necessidades especiais..."></textarea>
-                            </div>
-                        </div>
-
+                        </div>-->
                         <!-- Botões de Ação -->
                         <div class="d-flex align-items-center justify-content-end gap-3 pt-3 border-top">
                             <button type="reset"
@@ -204,32 +185,26 @@
                             </button>
                             <button type="submit"
                                     class="btn btn-brand-light d-inline-flex align-items-center gap-2 shadow-sm">
-                                <span class="material-symbols-outlined fs-5">check_circle</span>
+                                <span class="material-symbols-outlined fs-5">send</span>
                                 Cadastrar Animal
                             </button>
                             <a class="btn btn-success" type="button" href="{{ url_for('ongs') }}">
                                 <span class="material-symbols-outlined" style="font-size: 18px;">arrow_back</span>
                                 Voltar ao Painel
                             </a>
-
                         </div>
-
                     </form>
                 </div>
 
-                <!-- Card Auxiliar de Dicas -->
-                <div class="mt-4 p-3 bg-white rounded-4 border d-flex align-items-center gap-3">
-                    <div class="icon-box bg-warning-subtle text-warning-emphasis" style="width: 38px; height: 38px;">
-                        <span class="material-symbols-outlined fs-5">tips_and_updates</span>
-                    </div>
-                    <p class="mb-0 small text-muted">
-                        <strong class="text-dark">Dica de Adoção:</strong> Animais com fotos nítidas e detalhes sobre
-                        temperamento têm <strong>3x mais chances</strong> de encontrar um lar amoroso rapidamente.
-                    </p>
-                </div>
 
             </div>
+
+            </form>
         </div>
+
+
+    </div>
+    </div>
     </div>
 </main>
 
