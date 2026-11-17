@@ -1,0 +1,301 @@
+* {
+    margin: 0;
+    padding: 0;
+
+}
+
+.fundo {
+    background-color: #fff0de;
+}
+
+.cursos {
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    text-align: center;
+}
+
+.body {
+    width: 100%;
+    height: 100%;
+    font-family: PMingLiU-ExtB;
+    background-color: #fff0de;
+}
+
+.menu {
+    background-color: #96c1c5;
+    width: 100%;
+    height: 100px;
+}
+
+.menu ul {
+    list-style-type: none;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.menu ul li {
+    padding: 10px;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 20px;
+    color: #fff0de;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.conteudo h1 {
+    margin: 10px;
+    text-align: center;
+    font-size: 3em;
+    color: #694a47;
+    font-family: "Candara Light";
+}
+
+.home {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+    height: calc(100vh - 50px);
+    background: #fff0de;
+}
+
+.texto-left {
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #694a47;
+}
+.preco{
+    color: #ffd9d9;
+    font-family: "Segoe Print";
+}
+
+.precos{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+
+}
+
+.categoria {
+    font-family: "Yu Gothic Medium";
+    color:whitesmoke;
+
+}
+
+.avaliacao {
+    color: palegoldenrod;
+    font-size: 0.59em;
+    align-content: end;
+}
+
+
+.img-right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.calculos {
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 90px;
+    padding: 10px;
+}
+
+
+.card_calculo {
+    width: 380px;
+    height: 400px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #96c1c5;
+}
+
+.card_operacao {
+    border: 2px solid #694a47;
+    border-radius: 20px;
+    text-align: center;
+    color: #96c1c5;
+
+}
+
+.form-somar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+}
+
+.form-somar input {
+    width: 80px;
+}
+
+.operador {
+    font-size: 26px;
+}
+
+.card_operacao2 {
+    border: 2px solid sandybrown;
+    border-radius: 20px;
+    text-align: center;
+    color: burlywood;
+}
+
+.form-subtracao {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+}
+
+.form-subtracao input {
+    width: 80px;
+}
+
+.operador2 {
+    font-size: 26px;
+}
+
+
+.card_operacao3 {
+    border: 2px solid sandybrown;
+    border-radius: 20px;
+    text-align: center;
+    color: burlywood;
+}
+
+.form-multiplicar {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+}
+
+.form-multiplicar input {
+    width: 80px;
+}
+
+.operador3 {
+    font-size: 26px;
+}
+
+.card_operacao4 {
+    border: 2px solid sandybrown;
+    border-radius: 20px;
+    text-align: center;
+    color: burlywood;
+}
+
+.form-dividir {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    padding: 14px;
+}
+
+.form-dividir input {
+    width: 80px;
+}
+
+.operador4 {
+    font-size: 26px;
+}
+
+.icon_calculo {
+    font-size: 40px;
+    color: #694a47;
+}
+
+.h3 {
+    color: #694a47;
+
+}
+
+.geo {
+    color: #694a47;
+    justify-items: center;
+    margin: 10px;
+}
+
+.h2 {
+    justify-items: center;
+
+}
+
+.card_triangulo {
+    border: 2px solid sandybrown;
+    border-radius: 20px;
+    text-align: center;
+    color: burlywood;
+    font-size: 20px;
+    margin: 20px;
+    padding: 10px;
+    justify-items: center;
+
+}
+
+
+.card-breed h2 {
+    font-size: 1.25rem;
+    letter-spacing: -0.01em;
+    margin-bottom: 1rem !important;
+}
+
+.card-img-container {
+    width: 100%;
+    aspect-ratio: 1 / 1 !important; /* Força ser um quadrado perfeito */
+    overflow: hidden;
+    border-radius: 4px; /* Arredondado sutil da imagem */
+    margin-bottom: 1.5rem;
+}
+
+.card-img-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Faz a foto cortar sem esticar */
+}
+
+/* Estilo dos ícones e textos pequenos (stats) */
+.stat-item {
+    font-size: 0.75rem;
+    color: #b628b6;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.stat-icon {
+    width: 14px;
+    opacity: 0.5;
+}
+
+/* Remove bordas do card para ficar limpo como na imagem */
+.card-breed {
+    border: none !important;
+    background: transparent !important;
+}
